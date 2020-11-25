@@ -1,0 +1,45 @@
+3. Write examples with string
+> set stringExample "texto prueba"
+> get stringExample
+
+4. Write examples with hashes
+> hmset pelicula name "Conjuro"
+> hgetall pelicula
+
+5. Write examples with Lists
+> lpush canciones Despacito
+> lpush canciones Lentito
+> lpush canciones Rapidito
+
+6. Write examples with Sets
+> sadd generos Rock
+> sadd generos Cumbia
+> sadd generos Bachata
+
+7. Write examples with Sorted Sets
+> zadd series 1 Friends
+> zadd series 2 Vikings
+> zadd series 3 The100
+
+8. Write examples using Publish Subscribe
+> subscribe canal
+> publish canal "Bienvenido"
+
+9. Write examples using Transactions
+> multi
+> set tutorial redis
+> get turorial
+> exec
+
+10. Investigate backups
+> save
+> config get dir
+> bgsave
+Sirve para guardar la base de datos.
+
+11. Investigate Benchmarks - Run some
+$ redis-benchmark -t set,lpush -n 100000 -q
+SET: 74239.05 requests per second
+LPUSH: 79239.30 requests per second
+
+"En el ejemplo anterior, pedimos ejecutar la prueba de los comandos SET y LPUSH, en modo silencioso (ver el interruptor -q)."
